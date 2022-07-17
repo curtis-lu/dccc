@@ -1,0 +1,9 @@
+# Package Overview
+package_name: scoringmodel
+
+# Data Files
+training_data_file: default of credit card clients.xls
+
+variables_to_rename:
+  default payment next month: target
+  PAY_0: pay_1
