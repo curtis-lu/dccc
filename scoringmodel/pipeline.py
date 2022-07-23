@@ -1,5 +1,7 @@
 
 import pandas as pd
+import lightgbm as lgb
+from scoringmodel.config.core import config
 
 
 def gen_fullpay_l6m(data: pd.DataFrame):
@@ -112,3 +114,34 @@ def feature_pipeline(data: pd.DataFrame):
 								default_l1m])
 
 	return concated
+
+
+def modeling(x_train, x_valid, y_train, y_valid):
+	"""
+	"""
+	categorical_features = config.model_config.categorical_features
+
+	train_data = lgb.Dataset(x_train, 
+							 label=y_train,
+							 feature_name=config.model_config.features
+				 )
+
+	valid_data = lgb.Dataset(x_valid, 
+							 label=y_valid,
+							 feature_name=config.model_config.features
+				 )
+
+	params = config.model_config.train_params
+
+	model = lgb.train(params, 
+				      train_data, 
+				      num_boost_round=config.model_config.num_round, 
+				      valid_sets=[train_data, valid_data], 
+				      valid_names=['train','valid'],
+				      categorical_feature=categorical_features,
+				      callbacks=[lgb.early_stopping(stopping_rounds=config.model_config.stopping_rounds)]
+		    )
+
+	return model
+
+

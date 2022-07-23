@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Dict
+from typing import Dict, List
 
 from pydantic import BaseModel
 from strictyaml import YAML, load
@@ -20,6 +20,7 @@ class AppConfig(BaseModel):
     """
 
     training_data_file: str
+    model_save_file: str
 
 class ModelConfig(BaseModel):
     """
@@ -29,6 +30,14 @@ class ModelConfig(BaseModel):
 
     package_name: str
     variables_to_rename: Dict
+    target: str
+    features: List[str]
+    test_size: float
+    random_state: int
+    categorical_features: List[str]
+    train_params: dict
+    num_round: int
+    stopping_rounds: int
 
 class Config(BaseModel):
     """Master config object."""

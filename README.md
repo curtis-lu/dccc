@@ -9,6 +9,18 @@ w6: heroku
 w7: CI
 w8: CD
 
+開發順序：
+train_pipeline.py裡的每個步驟：
+* 讀資料
+* 資料切割
+* 資料前處理
+* 模型建立
+* 儲存模型
+
+predict.py
+
+
+
 
 process data:
     rename
