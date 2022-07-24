@@ -18,9 +18,14 @@ train_pipeline.py裡的每個步驟：
 * 儲存模型
 
 predict.py
+* 讀模型
+* 資料前處理
+* 預測
 
-
-
+test & validation & tox
+package the project
+fastapi
+heroku
 
 process data:
     rename
@@ -39,7 +44,6 @@ freature engineering:
 	education
 	mariage
 	pay_0
-
 
 	# 次數類
     fullpay_l6m, l3m

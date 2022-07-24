@@ -1,16 +1,19 @@
-from typing import List
 from pathlib import Path
-import pandas as pd
+from typing import List
+
 import joblib
+import pandas as pd
 
 # from scoringmodel import __version__ as _version
 from scoringmodel.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 
 _version = '0.0.1'
 
+
 def load_dataset(file_name: str) -> pd.DataFrame:
     rawdata = pd.read_excel(Path(f"{DATASET_DIR}/{file_name}"), 
-    	                    index_col=0, header=1)
+                            index_col=0, header=1
+                            )
 
     # rename variables with spaces, pay_0 to pay_1, and to lowercases
     transformed = rawdata.rename(columns=config.model_config.variables_to_rename)

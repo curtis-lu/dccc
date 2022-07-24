@@ -4,13 +4,10 @@ from typing import Dict, List
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
-#import scoringmodel
-
-
 # PACKAGE_ROOT = Path(scoringmodel.__file__).resolv().parent
 PACKAGE_ROOT = Path(r'C:\Users\user\00_notebooks\default_credit_card_clients\scoringmodel')
 CONFIG_FILE_PATH = PACKAGE_ROOT / 'config.yml'
-DATASET_DIR = PACKAGE_ROOT / 'data' / 'source'
+DATASET_DIR = PACKAGE_ROOT / 'data' 
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trainedmodel'
 
 
@@ -18,16 +15,16 @@ class AppConfig(BaseModel):
     """
     Application-level config.
     """
-
     training_data_file: str
+    test_data_file: str
     model_save_file: str
+
 
 class ModelConfig(BaseModel):
     """
     All configuration relevant to model
     training and feature engineering.
     """
-
     package_name: str
     variables_to_rename: Dict
     target: str
@@ -39,9 +36,10 @@ class ModelConfig(BaseModel):
     num_round: int
     stopping_rounds: int
 
-class Config(BaseModel):
-    """Master config object."""
 
+class Config(BaseModel):
+    """Master config object.
+    """
     app_config: AppConfig
     model_config: ModelConfig
 
@@ -57,7 +55,6 @@ def find_config_file() -> Path:
 def fetch_config_from_yaml(cfg_path: Path = None) -> YAML:
     """Parse YAML containing the package configuration.
     """
-
     if not cfg_path:
         cfg_path = find_config_file()
 
@@ -80,6 +77,5 @@ def create_and_validate_config(parsed_config: YAML = None) -> Config:
     )
 
     return _config
-
 
 config = create_and_validate_config()
