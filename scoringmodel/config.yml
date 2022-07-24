@@ -3,6 +3,7 @@ package_name: scoringmodel
 
 # Data Files
 training_data_file: default of credit card clients.xls
+test_data_file: sample_input_data.csv
 
 target: target
 
@@ -78,3 +79,16 @@ train_params:
 
 num_round: 100
 stopping_rounds: 20
+
+# domain_sex:
+#   - 1
+#   - 2
+
+# domain_education:
+#   - 0
+#   - 1
+#   - 2
+#   - 3
+#   - 4
+#   - 5
+#   - 6

@@ -10,17 +10,36 @@ w7: CI
 w8: CD
 
 開發順序：
-train_pipeline.py裡的每個步驟：
+1. train_pipeline.py裡的每個步驟：
 * 讀資料
 * 資料切割
-* 資料前處理
+* 資料前處理(特徵工程)
 * 模型建立
 * 儲存模型
 
-predict.py
+2. predict.py
+* 讀模型
+* 資料前處理
+* 預測
+
+3. config file + core.py
+* app config(應用程式相關)
+* model config(模型與特徵相關)
+
+4. data_manager
+* 讀資料
+* 儲存模型、刪除舊模型、讀取模型
+
+5. validation
+* 定義有空值的欄位，非在這些清單內，但有空值的欄位，即有錯誤發生。
+* 定義欄位值範圍，若不在定義範圍內，即有錯誤發生。
 
 
 
+test & validation & tox
+package the project
+fastapi
+heroku
 
 process data:
     rename
@@ -39,7 +58,6 @@ freature engineering:
 	education
 	mariage
 	pay_0
-
 
 	# 次數類
     fullpay_l6m, l3m
