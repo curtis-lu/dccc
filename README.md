@@ -35,7 +35,6 @@ w8: CD
 * 定義欄位值範圍，若不在定義範圍內，即有錯誤發生。
 
 
-
 test & validation & tox
 package the project
 fastapi
