@@ -4,10 +4,8 @@ from typing import List
 import joblib
 import pandas as pd
 
-# from scoringmodel import __version__ as _version
+from scoringmodel import __version__ as _version
 from scoringmodel.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
-
-_version = '0.0.1'
 
 
 def load_dataset(file_name: str) -> pd.DataFrame:

@@ -1,5 +1,3 @@
-
-
 w1: 規劃 project structure by DMLM
 w2: 分段寫CODE
 w3: tox, pytest
@@ -33,6 +31,13 @@ w8: CD
 5. validation
 * 定義有空值的欄位，非在這些清單內，但有空值的欄位，即有錯誤發生。
 * 定義欄位值範圍，若不在定義範圍內，即有錯誤發生。
+
+6. build the package
+working directory下
+python -m pip install --upgrade build
+python -m build
+
+7. api
 
 
 test & validation & tox

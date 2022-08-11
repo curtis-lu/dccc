@@ -1,3 +1,8 @@
-tmp
-documents
+_tmp
+_documents
+_source
 scoringmodel/data
+dev.ipynb
+research.ipynb
+dccc_scoring_model.egg-info/
+dist
