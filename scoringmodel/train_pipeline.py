@@ -24,3 +24,5 @@ def run_training() -> None:
     return model
 
 
+if __name__ == "__main__":
+    run_training()

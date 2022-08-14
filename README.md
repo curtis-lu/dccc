@@ -33,6 +33,8 @@ w8: CD
 * 定義欄位值範圍，若不在定義範圍內，即有錯誤發生。
 
 6. build the package
+tox -e train
+tox -e test_package
 working directory下
 python -m pip install --upgrade build
 python -m build

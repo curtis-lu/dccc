@@ -2,7 +2,7 @@
 package_name: scoringmodel
 
 # Data Files
-training_data_file: default of credit card clients.xls
+training_data_file: default_of_credit_card_clients.xls
 test_data_file: sample_input_data.csv
 
 target: target

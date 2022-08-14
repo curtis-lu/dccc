@@ -8,7 +8,7 @@ DESCRIPTION = "Example machine learning package from Curtis Lu. Modified from th
 URL = "https://github.com/curtis-lu/dccc"
 EMAIL = "pclu79@gmail.com"
 AUTHOR = "CurtisLu"
-REQUIRES_PYTHON = ">=3.7.0"
+REQUIRES_PYTHON = ">=3.6.0"
 
 
 # The rest you shouldn't have to touch too much :)
@@ -45,7 +45,7 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=("tests",)),
-    package_data={"regression_model": ["VERSION"]},
+    package_data={"scoringmodel": ["VERSION"]},
     install_requires=list_reqs(),
     extras_require={},
     include_package_data=True,
