@@ -1,8 +1,36 @@
+# Unit test / coverage reports
+.tox/
+.pytest_cache/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+
+# Distribution / packaging
+.Python
+build/
+dist/
+eggs/
+.eggs/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# datafiles
 _tmp
 _documents
 _source
 scoringmodel/data
-dev.ipynb
-research.ipynb
-dccc_scoring_model.egg-info/
-dist
+*.ipynb
+
+# trained models (will be created in CI)
+scoringmodel/trainedmodel/*.pkl

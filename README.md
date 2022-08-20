@@ -40,12 +40,17 @@ python -m pip install --upgrade build
 python -m build
 
 7. api
+語法架構
+tox -e run測試
+logging相關
+
+8. heroku佈署
+安裝heroku: heroku --version 確認安裝成功
+在工作資料夾下 cli: heroku create 
+
+設定heroku: git subtree push --prefix 資料夾名稱 heroku main
 
 
-test & validation & tox
-package the project
-fastapi
-heroku
 
 process data:
     rename
