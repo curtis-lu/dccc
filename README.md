@@ -32,12 +32,16 @@ w8: CD
 * 定義有空值的欄位，非在這些清單內，但有空值的欄位，即有錯誤發生。
 * 定義欄位值範圍，若不在定義範圍內，即有錯誤發生。
 
-6. build the package
+6. build & upload the package
 tox -e train
 tox -e test_package
 working directory下
 python -m pip install --upgrade build
 python -m build
+上傳package至pypi (注意test pypi & pypi要分別註冊)
+`twine check dist/* `
+`twine upload -r testpypi dist/* `
+`twine upload dist/*`
 
 7. api
 語法架構
@@ -47,8 +51,8 @@ logging相關
 8. heroku佈署
 安裝heroku: heroku --version 確認安裝成功
 在工作資料夾下 cli: heroku create 
-
 設定heroku: git subtree push --prefix 資料夾名稱 heroku main
+
 
 
 

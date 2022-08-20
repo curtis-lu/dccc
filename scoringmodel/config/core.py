@@ -4,8 +4,9 @@ from typing import Dict, List
 from pydantic import BaseModel
 from strictyaml import YAML, load
 
-# PACKAGE_ROOT = Path(scoringmodel.__file__).resolv().parent
-PACKAGE_ROOT = Path(r'C:\Users\user\00_notebooks\default_credit_card_clients\scoringmodel')
+import scoringmodel
+
+PACKAGE_ROOT = Path(scoringmodel.__file__).resolve().parent
 CONFIG_FILE_PATH = PACKAGE_ROOT / 'config.yml'
 DATASET_DIR = PACKAGE_ROOT / 'data' 
 TRAINED_MODEL_DIR = PACKAGE_ROOT / 'trainedmodel'
